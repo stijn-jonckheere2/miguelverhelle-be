@@ -1,0 +1,33 @@
+.homeWrapper {
+    background: url("/assets/images/about-banner.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.homeContentWrapper {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px 20px;
+
+    p {
+        font-size: 0.9em;
+        line-height: 1.1em;
+        & + p {
+            margin-top: 20px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .homeWrapper {
+        background-position: right;
+    }
+    .homeContentWrapper {
+        padding: 60px;
+
+        * {
+            max-width: 600px;
+        }
+        p {
+            line-height: 1.2em;
+        }
+    }
+}

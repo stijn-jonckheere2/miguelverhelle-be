@@ -1,0 +1,66 @@
+@import '~sass/variables';
+
+.contactWrapper {
+    background: url("/assets/images/about-banner-reversed.jpg") center no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.contactContentWrapper {
+    background: rgba(54, 138, 68, 0.5);
+    padding: 40px 20px;
+    h1 {
+        color: white;
+    }
+    h2 {
+        color: darken(white, 5%);
+    }
+    p {
+        font-size: 0.9em;
+        line-height: 1.1em;
+        & + p {
+            margin-top: 20px;
+        }
+    }
+}
+
+.contactContentButton {
+    padding: 20px;
+    padding-bottom: 0;
+    a {
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 10px 15px;
+        // border: 1px solid white;
+        // border-radius: 5px;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .contactWrapper {
+        background-position: right;
+    }
+    .contactContentWrapper {
+        padding: 60px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            text-align: left;
+        }
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+    .contactContentButton {
+        padding: 0;
+        margin-left: 100px;
+        a {
+            // background-color: rgba(255, 255, 255, 0.5);
+        }
+    }
+}

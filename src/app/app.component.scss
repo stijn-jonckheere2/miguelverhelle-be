@@ -1,0 +1,18 @@
+.contentWrapper {
+    margin-top: 90px;
+}
+
+footer {
+    padding: 20px;
+    background: rgba(200, 200, 200, 0.2);
+    p {
+        text-align: center;
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 768px) {
+    .contentWrapper {
+        margin-top: 115px;
+    }
+}

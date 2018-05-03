@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./variables";
+
+body {
+    background: #f7f7f7 none repeat scroll 0 0;
+}
+
+h1 {
+    font-size: 1.6em;
+    color: $primary-color;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.4em;
+    color: $primary-color-light;
+    margin-bottom: 20px;
+}
+
+h1,
+h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+p,
+span,
+a,
+div {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+}

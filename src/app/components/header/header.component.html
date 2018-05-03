@@ -1,3 +1,38 @@
 <div class="headerWrapper">
-  
+  <div class="headerLogo"></div>
+  <div class="headerNav">
+    <ul class="headerNav" [ngClass]="{'dropdown-closed': !mobileMenuOpen, 'dropdown-open': mobileMenuOpen }">
+      <li routerLinkActive="active">
+        <a [routerLink]="['/']">Home</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/portfolio']">Portfolio</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/getuigenissen']">Getuigenissen</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/contact']">Contact</a>
+      </li>
+    </ul>
+  </div>
+  <a class="headerNavDropdownTrigger" (click)="toggleMobileMenu()">
+    <i class="material-icons">menu</i>
+  </a>
+  <div class="headerNavDropdown" [ngClass]="{' enabled': mobileMenuOpen }" (click)="toggleMobileMenu()">
+    <ul>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/']">Home</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/portfolio']">Portfolio</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/getuigenissen']">Getuigenissen</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/contact']">Contact</a>
+      </li>
+    </ul>
+  </div>
 </div>

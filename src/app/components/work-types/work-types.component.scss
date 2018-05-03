@@ -1,0 +1,64 @@
+@import '~sass/variables';
+.workTypesWrapper {
+    padding: 40px 20px;
+    .workTypesContentWrapper {
+        h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.workTypeWrapper {
+    .workType {
+        &+.workType {
+            margin-top: 20px;
+        }
+        p {
+            font-weight: 700;
+        }
+        ul {
+            li {
+                padding: 10px 15px;
+                background-color: rgba(200, 200, 200, 0.2);
+                border-left: 5px solid $primary-color-light;
+                font-size: 0.9em;
+                line-height: 1.1em;
+                &+li {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .workTypesWrapper {
+        padding: 60px;
+        .workTypesContentWrapper {
+            h1 {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+        }
+    }
+    .workTypeWrapper {
+        display: flex;
+        justify-content: center;
+        .workType {
+            width: 300px;
+            h2 {
+                text-align: center;
+                padding: 10px 15px;
+            }
+            &+.workType {
+                margin-top: 0;
+                margin-left: 60px;
+            }
+            p {}
+            ul {
+                li {}
+            }
+        }
+    }
+}
