@@ -1,0 +1,88 @@
+@import '~sass/variables';
+.feedbackIntroWrapper {
+    background: url("/assets/images/about-banner.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.feedbackIntroContentWrapper {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px 20px;
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+.feedbackWrapper {
+    padding: 40px 20px;
+    .feedback {
+        // border-top: 5px solid $primary-color-light;
+        background-color: rgba(200, 200, 200, 0.2);
+        position: relative;
+        overflow: hidden;
+        padding: 20px;
+        h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 0.9em;
+            line-height: 1.1em;
+        }
+        span {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            i {
+                color: $primary-color-light;
+                margin-right: 5px;
+                font-size: 1.6em;
+            }
+            font-size: 0.8em;
+            color: lighten(black,50%);
+        }
+        &+.feedback {
+            margin-top: 20px;
+        }
+        &:before {
+            content: "";
+            display: block;
+            height: 50px;
+            width: 50px;
+            background-color: $primary-color-light;
+            position: absolute;
+            top: -25px;
+            left: -35px;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .feedbackIntroWrapper {
+        background-position: right;
+    }
+    .feedbackIntroContentWrapper {
+        padding: 60px;
+        * {
+            max-width: 600px;
+        }
+    }
+    .feedbackWrapper {
+        padding: 60px;
+        max-width: 880px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        .feedback {
+            box-sizing: border-box;
+            width: 49%;
+            margin-bottom: 20px;
+            &+.feedback {
+                margin-top: 0;
+            }
+            &:nth-of-type(even) {
+                margin-left: 2%;
+            }
+        }
+    }
+}

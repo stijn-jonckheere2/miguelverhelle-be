@@ -1,0 +1,28 @@
+@import '~sass/variables';
+
+.portfolioIntroWrapper {
+    background: url("/assets/images/about-banner.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.portfolioIntroContentWrapper {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px 20px;
+
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .portfolioIntroWrapper {
+        background-position: right;
+    }
+    .portfolioIntroContentWrapper {
+        padding: 60px;
+
+        * {
+            max-width: 600px;
+        }
+    }
+}

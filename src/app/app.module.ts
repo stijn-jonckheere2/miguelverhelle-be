@@ -9,10 +9,15 @@ import { OfferComponent } from './components/offer/offer.component';
 import { ContactCtaComponent } from './components/contact-cta/contact-cta.component';
 import { WorkTypesComponent } from './components/work-types/work-types.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: 'portfolio', component: PortfolioComponent },
+  { path: 'getuigenissen', component: FeedbackComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: '*', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -23,7 +28,9 @@ const appRoutes: Routes = [
     OfferComponent,
     ContactCtaComponent,
     WorkTypesComponent,
-    ContactComponent
+    ContactComponent,
+    FeedbackComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,

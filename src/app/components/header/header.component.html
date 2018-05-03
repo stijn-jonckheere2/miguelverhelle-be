@@ -2,7 +2,7 @@
   <div class="headerLogo"></div>
   <div class="headerNav">
     <ul class="headerNav" [ngClass]="{'dropdown-closed': !mobileMenuOpen, 'dropdown-open': mobileMenuOpen }">
-      <li routerLinkActive="active">
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{'exact':true}">
         <a [routerLink]="['/']">Home</a>
       </li>
       <li routerLinkActive="active">
@@ -21,8 +21,8 @@
   </a>
   <div class="headerNavDropdown" [ngClass]="{' enabled': mobileMenuOpen }" (click)="toggleMobileMenu()">
     <ul>
-      <li routerLinkActive="active">
-        <a [routerLink]="['/']">Home</a>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{'exact':true}">
+        <a [routerLink]="['']">Home</a>
       </li>
       <li routerLinkActive="active">
         <a [routerLink]="['/portfolio']">Portfolio</a>
