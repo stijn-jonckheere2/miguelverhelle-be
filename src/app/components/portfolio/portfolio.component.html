@@ -4,3 +4,60 @@
         <h2>Neem een kijkje naar onze recentste werken</h2>
     </div>
 </div>
+<div class="portfolioWrapper">
+    <div class="row">
+        <div class="column">
+            <ng-container *ngFor="let port of columnOneImages">
+                <!-- <div (click)="setActiveImage(port)"> -->
+                <div>
+                    <img src="{{ port.src }}" style="width:100%">
+                    <p>{{ port.title }}</p>
+                    <img class="portfolioOverlay" src="/assets/images/background/overlay.png" />
+                </div>
+            </ng-container>
+        </div>
+        <div class="column">
+            <ng-container *ngFor="let port of columnTwoImages">
+                <!-- <div (click)="setActiveImage(port)"> -->
+                <div>
+                    <img src="{{ port.src }}" style="width:100%">
+                    <p>{{ port.title }}</p>
+                    <img class="portfolioOverlay" src="/assets/images/background/overlay.png" />
+
+                </div>
+            </ng-container>
+        </div>
+        <div class="column">
+            <ng-container *ngFor="let port of columnThreeImages">
+                <!-- <div (click)="setActiveImage(port)"> -->
+                <div>
+                    <img src="{{ port.src }}" style="width:100%">
+                    <p>{{ port.title }}</p>
+                    <img class="portfolioOverlay" src="/assets/images/background/overlay.png" />
+
+                </div>
+            </ng-container>
+        </div>
+        <div class="column">
+            <ng-container *ngFor="let port of columnFourImages">
+                <!-- <div (click)="setActiveImage(port)"> -->
+                <div>
+                    <img src="{{ port.src }}" style="width:100%">
+                    <p>{{ port.title }}</p>
+                    <img class="portfolioOverlay" src="/assets/images/background/overlay.png" />
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="portfolioImageOverlayWrapper" *ngIf="activeImage">
+    <div class="portfolioImageOverlay">
+        <div class="overlayImage" [ngStyle]="{ 'background-image': 'url(' + activeImage.src + ')' }"></div>
+        <div class="overlayContent">
+            <h2>{{ activeImage.title }}</h2>
+            <p>{{ activeImage.description }}</p>
+        </div>
+        <i class="material-icons" (click)="resetActiveImage()">clear</i>
+    </div>
+</div> -->

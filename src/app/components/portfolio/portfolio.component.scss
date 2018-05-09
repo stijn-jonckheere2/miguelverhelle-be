@@ -1,5 +1,4 @@
 @import '~sass/variables';
-
 .portfolioIntroWrapper {
     background: url("/assets/images/about-banner.jpg") center no-repeat;
     background-size: cover;
@@ -8,9 +7,107 @@
 .portfolioIntroContentWrapper {
     background: rgba(255, 255, 255, 0.8);
     padding: 40px 20px;
-
     h2 {
         margin-bottom: 0;
+    }
+}
+
+.portfolioWrapper {
+    padding: 12px;
+    * {
+        box-sizing: border-box;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+    /* Create four equal columns that sits next to each other */
+    .column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+    }
+    .column div {
+        margin-top: 8px;
+        position: relative;
+        /*&:hover {
+            overflow: hidden;
+            cursor: pointer;
+            &:before {
+                content: "";
+                display: block;
+                height: 50px;
+                width: 50px;
+                background-color: $primary-color-light;
+                position: absolute;
+                top: -25px;
+                left: -35px;
+                transform: rotate(45deg);
+            }
+            p {
+                color: $primary-color-light;
+            }
+        }*/
+        p {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 10;
+            color: white;
+        }
+        .portfolioOverlay {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 5;
+        }
+    }
+}
+
+.portfolioImageOverlayWrapper {
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-color: #222222;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+    width: 100%;
+
+    .portfolioImageOverlay {
+        .overlayImage {
+            width: 100%;
+            height: 300px;
+
+            background-size: contain;
+            background-position: center;
+            background-color: black;
+            background-repeat: no-repeat;
+        }
+        .overlayContent {
+            padding: 20px 0;
+
+            p {
+                color: white;
+            }
+        }
+
+        i {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+
+            &:hover {
+                cursor: pointer;
+                color: $primary-color-light;
+            }
+        }
     }
 }
 
@@ -20,9 +117,55 @@
     }
     .portfolioIntroContentWrapper {
         padding: 60px;
-
         * {
             max-width: 600px;
+        }
+    }
+    .portfolioWrapper {
+        padding: 52px;
+    }
+    .portfolioImageOverlayWrapper {
+        height: 50vh;
+        top: calc(50% - 25vh);
+        left: calc(50% - 380px);
+        width: initial;
+
+        .portfolioImageOverlay {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            height: calc(50vh - 120px);
+
+            .overlayImage {
+                width: 350px;
+                height: 100%;
+            }
+            .overlayContent {
+                width: 350px;
+                padding-left: 20px;
+                padding-top: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolioWrapper {
+        padding: 12px;
+        padding-bottom: 20px;
+        .column {
+            flex: 50%;
+            max-width: 50%;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolioWrapper {
+        .column {
+            flex: 100%;
+            max-width: 100%;
         }
     }
 }
