@@ -16,6 +16,9 @@
         background-position: center;
         height: 50px;
         width: 50px;
+        &:hover {
+            cursor: pointer;
+        }
     }
     a {
         text-decoration: none;
