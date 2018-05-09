@@ -7,9 +7,9 @@
 <div class="feedbackWrapper">
   <div class="feedback" *ngFor="let item of feedbackItems">
     <h2>{{item.title}}</h2>
-    <span>
+    <!-- <span>
       <i class="material-icons">date_range</i>
-      {{item.date | date:"dd/MM/yyyy" }}</span>
+      {{item.date | date:"dd/MM/yyyy" }}</span> -->
     <p [innerHTML]="item.content">
     </p>
     
