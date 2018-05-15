@@ -114,11 +114,15 @@
 @media (min-width: 768px) {
     .portfolioIntroWrapper {
         background-position: right;
+        
     }
     .portfolioIntroContentWrapper {
         padding: 60px;
         * {
             max-width: 600px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
     .portfolioWrapper {

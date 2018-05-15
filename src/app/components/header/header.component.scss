@@ -11,11 +11,11 @@
     z-index: 15;
     .headerLogo {
         background-image: url("/assets/images/MainLogoColorTransparent.png");
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         height: 50px;
-        width: 50px;
+        width: 81px;
         &:hover {
             cursor: pointer;
         }
@@ -73,7 +73,7 @@
         padding: 20px 60px;
         .headerLogo {
             height: 75px;
-            width: 75px;
+            width: 121px;
         }
     }
     .headerNav {

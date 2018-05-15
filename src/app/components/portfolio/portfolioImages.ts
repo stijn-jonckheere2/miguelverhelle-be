@@ -53,4 +53,19 @@ export const portfolioImages: {
             title: 'Interieur',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit dapibus nulla, eu gravida est.'
         },
+        {
+            src: '/assets/images/interieur/int-7.jpg',
+            title: 'Interieur',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit dapibus nulla, eu gravida est.'
+        },
+        {
+            src: '/assets/images/interieur/int-8.jpg',
+            title: 'Interieur',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit dapibus nulla, eu gravida est.'
+        },
+        {
+            src: '/assets/images/interieur/int-9.jpg',
+            title: 'Interieur',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit dapibus nulla, eu gravida est.'
+        },
     ];

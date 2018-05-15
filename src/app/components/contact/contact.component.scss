@@ -92,6 +92,9 @@
 
         * {
             max-width: 600px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
     .contactWrapper {
@@ -108,14 +111,18 @@
 
             .contactImage {
                 box-sizing: border-box;
-                width: 50%;
+                width: 197px;
                 height: auto;
                 border-bottom: 0;
                 border-right: 5px solid $primary-color-light;
+                background-size: contain;
+                background-position: right;
             }
             .contactInfo {
                 box-sizing: border-box;
-                width: 50%;
+                flex-basis: 50%;
+                flex-grow: 1;
+                flex-shrink: 0;
                 padding-top: 0;
                 padding-bottom: 0;
                 padding-right: 0;
