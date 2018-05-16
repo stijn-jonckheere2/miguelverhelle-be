@@ -4,7 +4,7 @@ export const portfolioImages: {
     description: string
 }[] = [
         {
-            src: '/assets/images/exterieur/ext-1.png',
+            src: '/assets/images/exterieur/ext-1.jpg',
             title: 'Exterieur',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit dapibus nulla, eu gravida est.'
         },
@@ -14,7 +14,7 @@ export const portfolioImages: {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit dapibus nulla, eu gravida est.'
         },
         {
-            src: '/assets/images/exterieur/ext-3.png',
+            src: '/assets/images/exterieur/ext-3.jpg',
             title: 'Exterieur',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit dapibus nulla, eu gravida est.'
         },
