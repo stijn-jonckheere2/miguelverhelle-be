@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { portfolioImages } from './portfolioImages';
+import { portfolioImages, PortfolioImage, PortfolioCategory } from './portfolioImages';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,7 +7,8 @@ import { portfolioImages } from './portfolioImages';
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent implements OnInit {
-  portfolioImages = portfolioImages;
+  portfolioCategories = PortfolioCategory;
+  portfolioImages: PortfolioImage[] = portfolioImages;
   portfolioLength = this.portfolioImages.length;
   activeImage;
 
@@ -15,6 +16,9 @@ export class PortfolioComponent implements OnInit {
   columnTwoImages = [];
   columnThreeImages = [];
   columnFourImages = [];
+
+  filters: string[] = [];
+  activeFilter: string;
 
   constructor() { }
 

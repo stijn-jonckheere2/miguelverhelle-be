@@ -11,6 +11,7 @@ import { WorkTypesComponent } from './components/work-types/work-types.component
 import { ContactComponent } from './components/contact/contact.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { EnumToArrayPipe } from './components/portfolio/enum-to-array.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,7 +37,9 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    EnumToArrayPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
