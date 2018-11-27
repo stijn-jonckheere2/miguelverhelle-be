@@ -5,10 +5,51 @@
 }
 
 .portfolioIntroContentWrapper {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(245, 245, 245, 0.8);
     padding: 40px 20px;
     h2 {
         margin-bottom: 0;
+    }
+}
+
+.portfolioFilterWrapper {
+    padding: 40px 20px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    select, option {
+        padding: 10px 15px;
+    }
+    select {
+        margin-bottom: 10px;
+    }
+
+    .portfolioFilters {
+        span {
+            position: relative;
+            &:after {
+                content: "x";
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                font-weight: bold;
+            }
+            display: inline-block;
+            padding: 10px 15px;
+            padding-right: 30px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            background-color: lightgrey;
+
+            &:hover {
+                background-color: #b0cc4b;
+                cursor: pointer;
+            }
+        }
     }
 }
 
@@ -28,10 +69,10 @@
         max-width: 25%;
         padding: 0 4px;
     }
-    .column div {
+    .column > div {
         margin-top: 8px;
         position: relative;
-        /*&:hover {
+        &:hover {
             overflow: hidden;
             cursor: pointer;
             &:before {
@@ -48,7 +89,7 @@
             p {
                 color: $primary-color-light;
             }
-        }*/
+        }
         p {
             position: absolute;
             bottom: 20px;
@@ -72,29 +113,32 @@
     top: 0;
     left: 0;
     z-index: 20;
-    background-color: #222222;
-    display: flex;
-    align-items: center;
-    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    box-sizing: border-box;
     height: 100vh;
     width: 100%;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     .portfolioImageOverlay {
+        box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.6);
+
         .overlayImage {
             width: 100%;
-            height: 300px;
+            height: 80vh;
 
             background-size: contain;
             background-position: center;
-            background-color: black;
+            background-color: #202020;
             background-repeat: no-repeat;
         }
         .overlayContent {
-            padding: 20px 0;
-
-            p {
-                color: white;
-            }
+            padding: 20px;
+            background-color: #f7f7f7;
         }
 
         i {
@@ -125,30 +169,27 @@
             margin-right: auto;
         }
     }
+
+    .portfolioFilterWrapper {
+        padding: 60px;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        select {
+            margin-right: 10px;
+        }
+        
+    }
     .portfolioWrapper {
         padding: 52px;
     }
     .portfolioImageOverlayWrapper {
-        height: 50vh;
-        top: calc(50% - 25vh);
-        left: calc(50% - 380px);
-        width: initial;
-
         .portfolioImageOverlay {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            width: 100%;
-            height: calc(50vh - 120px);
-
             .overlayImage {
-                width: 350px;
-                height: 100%;
-            }
-            .overlayContent {
-                width: 350px;
-                padding-left: 20px;
-                padding-top: 0;
+                height: 50vh;
             }
         }
     }
@@ -170,6 +211,22 @@
         .column {
             flex: 100%;
             max-width: 100%;
+        }
+    }
+
+    .portfolioImageOverlayWrapper {
+        overflow-y: auto;
+
+        .portfolioImageOverlay {
+            width: 100%;
+            height: 100%;
+
+            overflow-y: auto;
+
+            .overlayContent {
+                box-sizing: border-box;
+                min-height: 20vh;
+            }
         }
     }
 }

@@ -5,8 +5,12 @@
     </div>
 </div>
 <div class="portfolioFilterWrapper">
-    <div class="portfolioFilter" *ngFor="let filter of portfolioCategories | enumToArray">
-        <p>{{ filter }}</p>
+    <select #filter class="portfolioSelector" (change)="addFilter($event.target.value)" ([value])="filterLabel">
+        <option>Voeg filters toe</option>
+        <option *ngFor="let filter of portfolioCategories | enumToArray" [value]="filter">{{ filter }}</option>
+    </select>
+    <div class="portfolioFilters">
+        <span *ngFor="let activeFilter of activeFilters" (click)="removeFilter(activeFilter)">{{ activeFilter }}</span>
     </div>
 </div>
 <div class="portfolioWrapper">
@@ -59,13 +63,13 @@
     </div>
 </div>
 
-<div class="portfolioImageOverlayWrapper" *ngIf="activeImage">
+<div class="portfolioImageOverlayWrapper" *ngIf="activeImage" (click)="resetActiveImage()">
     <div class="portfolioImageOverlay">
         <div class="overlayImage" [ngStyle]="{ 'background-image': 'url(' + activeImage.src + ')' }"></div>
         <div class="overlayContent">
             <h2>{{ activeImage.title }}</h2>
             <p>{{ activeImage.description }}</p>
         </div>
-        <i class="material-icons" (click)="resetActiveImage()">clear</i>
+        <i class="material-icons">clear</i>
     </div>
 </div>

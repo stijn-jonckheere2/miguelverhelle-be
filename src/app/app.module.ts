@@ -31,14 +31,16 @@ const appRoutes: Routes = [
     WorkTypesComponent,
     ContactComponent,
     FeedbackComponent,
-    PortfolioComponent
+    PortfolioComponent,
+
+    EnumToArrayPipe
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    EnumToArrayPipe
+    // EnumToArrayPipe
   ],
   bootstrap: [AppComponent]
 })

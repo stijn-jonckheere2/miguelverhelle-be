@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { portfolioImages, PortfolioImage, PortfolioCategory } from './portfolioImages';
 
 @Component({
@@ -18,23 +18,35 @@ export class PortfolioComponent implements OnInit {
   columnFourImages = [];
 
   filters: string[] = [];
-  activeFilter: string;
+  activeFilters: string[] = [];
+  filterLabel = 'Voeg filters toe';
+
+  @ViewChild('filter') filter;
 
   constructor() { }
 
   ngOnInit() {
-    for (let i = 0; i < this.portfolioLength; i += 4) {
-      this.columnOneImages.push(this.portfolioImages[i]);
+    this.calculateColumns();
+  }
+
+  addFilter(filter: string): void {
+    if (filter !== this.filterLabel) {
+      const filterIndex = this.activeFilters.findIndex(f => f === filter);
+      if (filterIndex === -1) {
+        this.activeFilters.push(filter);
+      }
+
+      this.calculateColumns();
     }
-    for (let i = 1; i < this.portfolioLength; i += 4) {
-      this.columnTwoImages.push(this.portfolioImages[i]);
+  }
+
+  removeFilter(filter: string): void {
+    const filterIndex = this.activeFilters.findIndex(f => f === filter);
+    if (filterIndex !== -1) {
+      this.activeFilters.splice(filterIndex, 1);
     }
-    for (let i = 2; i < this.portfolioLength; i += 4) {
-      this.columnThreeImages.push(this.portfolioImages[i]);
-    }
-    for (let i = 3; i < this.portfolioLength; i += 4) {
-      this.columnFourImages.push(this.portfolioImages[i]);
-    }
+
+    this.calculateColumns();
   }
 
   setActiveImage(image) {
@@ -43,6 +55,40 @@ export class PortfolioComponent implements OnInit {
 
   resetActiveImage() {
     this.activeImage = null;
+  }
+
+  calculateColumns() {
+    // reset the images
+    this.filter.nativeElement.value = this.filterLabel;
+    this.columnOneImages = [];
+    this.columnTwoImages = [];
+    this.columnThreeImages = [];
+    this.columnFourImages = [];
+
+    let filteredImages: PortfolioImage[];
+
+    // set the filter
+    if (this.activeFilters.length > 0) {
+      filteredImages = this.portfolioImages.filter((image: PortfolioImage) => this.activeFilters.indexOf(image.category) !== -1);
+      this.portfolioLength = filteredImages.length;
+    } else {
+      filteredImages = this.portfolioImages;
+      this.portfolioLength = this.portfolioImages.length;
+    }
+
+    // fill the columns
+    for (let i = 0; i < this.portfolioLength; i += 4) {
+      this.columnOneImages.push(filteredImages[i]);
+    }
+    for (let i = 1; i < this.portfolioLength; i += 4) {
+      this.columnTwoImages.push(filteredImages[i]);
+    }
+    for (let i = 2; i < this.portfolioLength; i += 4) {
+      this.columnThreeImages.push(filteredImages[i]);
+    }
+    for (let i = 3; i < this.portfolioLength; i += 4) {
+      this.columnFourImages.push(filteredImages[i]);
+    }
   }
 
 }
