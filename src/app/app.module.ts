@@ -12,6 +12,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { EnumToArrayPipe } from './components/portfolio/enum-to-array.pipe';
+import { ImagePreloaderServiceContract, ImagePreloaderService, LoaderServiceContract, LoaderService } from './services';
+import { LoaderComponent } from './components/loader/loader.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,7 +34,7 @@ const appRoutes: Routes = [
     ContactComponent,
     FeedbackComponent,
     PortfolioComponent,
-
+    LoaderComponent,
     EnumToArrayPipe
   ],
   imports: [
@@ -40,7 +42,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    // EnumToArrayPipe
+    { provide: ImagePreloaderServiceContract, useClass: ImagePreloaderService },
+    { provide: LoaderServiceContract, useClass: LoaderService }
   ],
   bootstrap: [AppComponent]
 })

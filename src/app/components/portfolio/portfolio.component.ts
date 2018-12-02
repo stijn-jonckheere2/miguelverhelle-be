@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { portfolioImages, PortfolioImage, PortfolioCategory } from './portfolioImages';
+import { ImagePreloaderServiceContract, LoaderServiceContract } from '../../services';
 
 @Component({
   selector: 'app-portfolio',
@@ -23,13 +24,19 @@ export class PortfolioComponent implements OnInit {
 
   @ViewChild('filter') filter;
 
-  constructor() { }
+  constructor(
+    private preloadService: ImagePreloaderServiceContract,
+    private loaderService: LoaderServiceContract
+  ) { }
 
   ngOnInit() {
+    this.preloadImages();
     this.calculateColumns();
   }
 
   addFilter(filter: string): void {
+    this.loaderService.setLoading(true);
+
     if (filter !== this.filterLabel) {
       const filterIndex = this.activeFilters.findIndex(f => f === filter);
       if (filterIndex === -1) {
@@ -41,6 +48,8 @@ export class PortfolioComponent implements OnInit {
   }
 
   removeFilter(filter: string): void {
+    this.loaderService.setLoading(true);
+
     const filterIndex = this.activeFilters.findIndex(f => f === filter);
     if (filterIndex !== -1) {
       this.activeFilters.splice(filterIndex, 1);
@@ -89,6 +98,13 @@ export class PortfolioComponent implements OnInit {
     for (let i = 3; i < this.portfolioLength; i += 4) {
       this.columnFourImages.push(filteredImages[i]);
     }
+
+    this.loaderService.setLoading(false);
+  }
+
+  preloadImages(): void {
+    const imageSources = this.portfolioImages.map(image => image.src);
+    this.preloadService.loadImages(imageSources);
   }
 
 }

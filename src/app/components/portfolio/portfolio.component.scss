@@ -1,4 +1,5 @@
 @import '~sass/variables';
+
 .portfolioIntroWrapper {
     background: url("/assets/images/about-banner.jpg") center no-repeat;
     background-size: cover;
@@ -43,10 +44,10 @@
             margin-right: 10px;
             margin-bottom: 10px;
             border-radius: 20px;
-            background-color: lightgrey;
+            background-color: #dfdfdf;
 
             &:hover {
-                background-color: #b0cc4b;
+                background-color: darken(#dfdfdf, 20%);
                 cursor: pointer;
             }
         }

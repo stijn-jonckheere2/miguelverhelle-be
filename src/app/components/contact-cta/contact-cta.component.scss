@@ -7,13 +7,15 @@
 }
 
 .contactContentWrapper {
-    background: rgba(54, 138, 68, 0.5);
+    background: rgba(176, 204, 75, 0.5);
     padding: 40px 20px;
     h1 {
         color: white;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
     h2 {
         color: darken(white, 5%);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
     p {
         font-size: 0.9em;

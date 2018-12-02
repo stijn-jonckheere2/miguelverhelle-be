@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ImagePreloaderServiceContract } from '../../services';
 
 @Component({
   selector: 'app-home',
@@ -10,15 +11,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   backgrounds: string[] = [
     '/assets/images/banners-home/banner0.jpg',
     '/assets/images/banners-home/banner1.jpg',
-    '/assets/images/banners-home/banner2.jpg'
+    // '/assets/images/banners-home/banner2.jpg'
   ];
 
   currentBackground = 0;
   backgroundTimer: any;
 
-  constructor() { }
+  constructor(private preloadService: ImagePreloaderServiceContract) { }
 
   ngOnInit() {
+    this.preloadImages();
+
     this.backgroundTimer = setInterval(() => {
       this.swapBackgrounds();
     }, 5000);
@@ -40,6 +43,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     clearInterval(this.backgroundTimer);
   }
 
-
+  preloadImages(): void {
+    this.preloadService.loadImages(this.backgrounds);
+  }
 
 }
