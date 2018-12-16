@@ -8,7 +8,7 @@
 </div>
 <div class="portfolioFilterWrapper">
     <select #filter class="portfolioSelector" (change)="addFilter($event.target.value)" ([value])="filterLabel">
-        <option value="default">Voeg filters toe</option>
+        <option [value]="filterDefaultValue">Voeg filters toe</option>
         <option *ngFor="let filter of portfolioCategories | enumToArray" [value]="filter">{{ filter }}</option>
     </select>
     <div class="portfolioFilters">

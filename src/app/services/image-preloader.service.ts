@@ -12,16 +12,16 @@ export class ImagePreloaderService implements ImagePreloaderServiceContract {
             this.images = [];
         }
 
-        for (const source of sources) {
+        sources.forEach(source => {
             const imageIndex = this.images.findIndex(img => (img.src as string).indexOf(source) !== -1);
 
-            if (imageIndex !== -1) {
+            if (imageIndex === -1) {
                 const preloadImage = new Image(300, 300);
                 preloadImage.src = source;
                 this.images.push(
                     preloadImage
                 );
             }
-        }
+        });
     }
 }

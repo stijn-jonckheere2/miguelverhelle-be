@@ -20,7 +20,7 @@ export class PortfolioComponent implements OnInit {
 
   filters: string[] = [];
   activeFilters: string[] = [];
-  filterLabel = 'Voeg filters toe';
+  filterDefaultValue = 'default';
 
   @ViewChild('filter') filter;
 
@@ -37,7 +37,7 @@ export class PortfolioComponent implements OnInit {
   addFilter(filter: string): void {
     this.loaderService.setLoading(true);
 
-    if (filter !== this.filterLabel) {
+    if (filter !== this.filterDefaultValue) {
       const filterIndex = this.activeFilters.findIndex(f => f === filter);
       if (filterIndex === -1) {
         this.activeFilters.push(filter);
@@ -73,7 +73,7 @@ export class PortfolioComponent implements OnInit {
 
   calculateColumns() {
     // reset the images
-    this.filter.nativeElement.value = 'default';
+    this.filter.nativeElement.value = this.filterDefaultValue;
     this.columnOneImages = [];
     this.columnTwoImages = [];
     this.columnThreeImages = [];
