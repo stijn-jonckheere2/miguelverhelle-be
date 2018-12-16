@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   backgrounds: string[] = [
     '/assets/images/banners-home/banner0.jpg',
     '/assets/images/banners-home/banner1.jpg',
-    // '/assets/images/banners-home/banner2.jpg'
+    '/assets/images/banners-home/banner2.jpg'
   ];
 
   currentBackground = 0;
