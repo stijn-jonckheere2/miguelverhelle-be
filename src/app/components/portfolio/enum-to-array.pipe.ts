@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import 'es7-object-polyfill';
 
 @Pipe({
     name: 'enumToArray'
