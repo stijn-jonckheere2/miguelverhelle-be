@@ -73,7 +73,7 @@ export class PortfolioComponent implements OnInit {
 
   calculateColumns() {
     // reset the images
-    this.filter.nativeElement.value = this.filterLabel;
+    this.filter.nativeElement.value = 'default';
     this.columnOneImages = [];
     this.columnTwoImages = [];
     this.columnThreeImages = [];
