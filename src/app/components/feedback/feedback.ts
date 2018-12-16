@@ -10,9 +10,9 @@ export const feedback = [
         Wij hadden het plan een volledig nieuwe verdiep in te richten als nieuw hoofdkantoor voor Vacansoleil. 
         
         Heel snel kregen kregen we een correcte offerte met een correct prijsvoorstel. 
-        Samen hadden we een timing opgesteld , deze timing is tiptop aangehouden . <br/>
-        We hebben Miguel ervaren als een echte vakman, die ook telkens goed met klant meedenkt. 
-        En het schilderwerk was gewoon tiptop !  Kortom : een vakman met vooral veel liefde voor zijn vak. <br/>
+        Samen hadden we een timing opgesteld, deze timing is tiptop aangehouden. <br/>
+        We hebben Miguel ervaren als een echte vakman, die ook telkens goed met de klant meedenkt. 
+        En het schilderwerk was gewoon tiptop! Kortom: een vakman met vooral veel liefde voor zijn vak. <br/>
         Puik werk Miguel!`
     },
     {

@@ -67,8 +67,8 @@
 
 <div class="portfolioImageOverlayWrapper" *ngIf="activeImage" (click)="resetActiveImage()">
     <div class="portfolioImageOverlay">
-        <div class="overlayImage" [ngStyle]="{ 'background-image': 'url(' + activeImage.src + ')' }"></div>
-        <div class="overlayContent">
+        <div class="overlayImage" [ngStyle]="{ 'background-image': 'url(' + activeImage.src + ')' }" (click)="blockResetImage($event)"></div>
+        <div class="overlayContent" (click)="blockResetImage($event)">
             <h2>{{ activeImage.title }}</h2>
             <p>{{ activeImage.description }}</p>
         </div>

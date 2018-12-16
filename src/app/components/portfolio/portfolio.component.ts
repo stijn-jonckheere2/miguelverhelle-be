@@ -66,6 +66,11 @@ export class PortfolioComponent implements OnInit {
     this.activeImage = null;
   }
 
+  blockResetImage(event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
   calculateColumns() {
     // reset the images
     this.filter.nativeElement.value = this.filterLabel;
