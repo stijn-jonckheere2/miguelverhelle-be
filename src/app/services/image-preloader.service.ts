@@ -13,9 +13,9 @@ export class ImagePreloaderService implements ImagePreloaderServiceContract {
         }
 
         for (const source of sources) {
-            const existingImage = this.images.find(img => (img.src as string).indexOf(source) !== -1);
+            const imageIndex = this.images.findIndex(img => (img.src as string).indexOf(source) !== -1);
 
-            if (!existingImage) {
+            if (imageIndex !== -1) {
                 const preloadImage = new Image(300, 300);
                 preloadImage.src = source;
                 this.images.push(
